@@ -14,15 +14,15 @@ public class UserServiceImpl {
 	@Autowired
 	private UserRepo userRepo;
 	
-	public Boolean login(User user)
+	public String login(String username,String password)
 	{
-		User u = userRepo.findByuserName(user.getUserName());
+		User u = userRepo.findByuserName(username);
 		if(u != null)
 		{
-			return true;
+				return u.getPassword();
 		}
 		
-		return false;
+		return null;
 	}
 	
 	public Boolean register(UserModel userModel) {

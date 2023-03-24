@@ -27,8 +27,8 @@ public class Controller {
 	
 	
 	@GetMapping("/login")
-	public Boolean login(User user) {
-		return userserviceImpl.login(user);
+	public String login(@RequestParam String username , @RequestParam String password) {
+		return userserviceImpl.login(username,password);
 		
 	}
 }
